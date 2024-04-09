@@ -5,29 +5,38 @@ class pasajeros{
     private $nombre;
     private $apellido;
     private $numeroDocumento;
-    
-    public function __construct($nom,$apel,$numDoc){
+    private $telefono;
+    /**Modificar la clase Viaje para que ahora los pasajeros sean un objeto que tenga los atributos nombre, apellido, numero de 
+ * documento y teléfono */
+    public function __construct($nom,$apel,$numDoc,$telf){
         $this->nombre = $nom;
         $this->apellido = $apel;
         $this->numeroDocumento = $numDoc;
+        $this->telefono = $telf;
     }
 
     public function getNombre() {
         return $this->nombre;
     }
-    public function setNombre($nombre) {
-        $this->nombre = $nombre;
+    public function setNombre($nom) {
+        $this->nombre = $nom;
     }
     public function getApellido() {
         return $this->apellido;
     }
-    public function setApellido($apellido) {
-        $this->apellido = $apellido;
+    public function setApellido($apel) {
+        $this->apellido = $apel;
     }
     public function getNumeroDocumento() {
         return $this->numeroDocumento;
     }
-    public function setNumeroDocumento($numeroDocumento) {
-        $this->numeroDocumento = $numeroDocumento;
+    public function setNumeroDocumento($numDoc) {
+        $this->numeroDocumento = $numDoc;
+    }
+    public function getTelefono(){
+        return $this->telefono;
+    }
+    public function setTelefono($telf){
+        $this->telefono = $telf;
     }
 }
