@@ -2,23 +2,23 @@
 /**También se desea guardar la información de la persona responsable de realizar el viaje, para ello cree una clase 
  * ResponsableV que registre el número de empleado, número de licencia, nombre y apellido. */
 class ResponsableV{
-    private $empleado;
+    private $numeroEmpleado;
     private $numeroLicencia;
     private $nombre;
     private $apellido;
     
-    public function __construct($empl,$numLic,$nom,$apel){
-        $this->empleado = $empl;
+    public function __construct($numEmpl,$numLic,$nom,$apel){
+        $this->numeroEmpleado = $numEmpl;
         $this->numeroLicencia = $numLic;
         $this->nombre = $nom;
         $this->apellido = $apel;
     }
       // Métodos get y set para $empleado
       public function getEmpleado() {
-        return $this->empleado;
+        return $this->numeroEmpleado;
     }
-    public function setEmpleado($empl) {
-        $this->empleado = $empl;
+    public function setEmpleado($numEmpl) {
+        $this->numeroEmpleado = $numEmpl;
     }
     public function getNumeroLicencia() {
         return $this->numeroLicencia;
@@ -37,5 +37,14 @@ class ResponsableV{
     }
     public function setApellido($apel) {
         $this->apellido = $apel;
+    }
+    public function __toString(){
+        return "Responsable:\nNumero de Empleado: ".$this->getEmpleado()."\nNumero de Licencia: ".$this->getNumeroLicencia()."\nNombre y Apellido".$this->getNombre()." ".$this->getApellido();
+    }
+    public function modificarEmpleado($nuevoEmpleado){
+        $this->setEmpleado($nuevoEmpleado[0]);
+        $this->setNumeroLicencia($nuevoEmpleado[1]);
+        $this->setNombre($nuevoEmpleado[2]);
+        $this->setApellido($nuevoEmpleado[3]);
     }
 }

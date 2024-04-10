@@ -1,7 +1,7 @@
 <?php
 /** Utilice clases y arreglos  para   almacenar la información correspondiente a los pasajeros. 
  * Cada pasajero guarda  su “nombre”, “apellido” y “numero de documento”. */
-class pasajeros{
+class pasajero{
     private $nombre;
     private $apellido;
     private $numeroDocumento;
@@ -38,5 +38,13 @@ class pasajeros{
     }
     public function setTelefono($telf){
         $this->telefono = $telf;
+    }
+    public function __toString(){
+        return "Nombre y Apellido: ".$this->getNombre()." ".$this->getApellido()."\nDNI: ".$this->getNumeroDocumento()."\nTelefono: ".$this->getTelefono();
+    }
+    public function modificar($nuevoNom, $nuevoApe, $nuevoTele){
+        $this->setNombre($nuevoNom);
+        $this->setApellido($nuevoApe);
+        $this->setTelefono($nuevoTele);
     }
 }
