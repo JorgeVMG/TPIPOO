@@ -51,20 +51,8 @@ class viaje{
         $this->colcPasajeros = $colcP;
     }
     public function __toString(){
-        return "Codigo de viaje: ".$this->getCodigoViaje()."\nDestino: ".$this->getDestino()."\nResponsable:".$this->getResponsable()."\nCantidad maxima de pasajeros: ".$this->getCantidadMaxPasajeros().
+        return "Codigo de viaje: ".$this->getCodigoViaje()."\nDestino: ".$this->getDestino()."\nResponsable: ".$this->getResponsable()."\nCantidad maxima de pasajeros: ".$this->getCantidadMaxPasajeros().
         "\nCantidad de Pasajeros: ".count($this->getColcPasajeros());
     }
-    public function modificarViaje($nuevoViaje){
-        
-    }
-    public function compararPasajero($nuevPasajero){
-        $colcPasa = $this->getColcPasajeros();
-        $encontrado = false;
-        foreach ($colcPasa as $i) {
-            if ($i === $nuevPasajero) {
-                $encontrado = true;
-            }
-        }
-        return $encontrado;     
-    }
+   
 }
